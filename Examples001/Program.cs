@@ -33,7 +33,7 @@ Console.WriteLine("нарушают порядок возрастания");
 
 int index = 0;
 int max = 0;
-int[] B = new int[10];
+int[] B = NewArray(10);
 
 while (index < A.Length)
 {
