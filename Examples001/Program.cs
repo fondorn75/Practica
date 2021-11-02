@@ -24,7 +24,7 @@ while (index < A.Length)
     index++;
 }
 
-Console.WriteLine("massive B");
+Console.WriteLine("нарушают порядок возрастания");
 
 index = 0;
 int max = 0;
@@ -51,16 +51,28 @@ while (index < A.Length)
     index++;
 }
 arifm = arifm / A.Length;
-Console.WriteLine(arifm);
-
+Console.WriteLine("Среднее арифметическое: " + arifm);
 
 Console.WriteLine();
+
 index = 0;
 while (index < A.Length)
 {
-    if (arifm< A[index])
+    if (arifm < A[index])
     {
         Console.WriteLine(A[index]);
     }
-index++;
+    index++;
+}
+
+Console.WriteLine("четные");
+
+index = 0;
+while (index < A.Length)
+{
+    if (A[index] % 2 == 0)
+    {
+        Console.WriteLine(A[index]);
+    }
+    index++;
 }
