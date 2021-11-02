@@ -28,12 +28,14 @@ Console.WriteLine("нарушают порядок возрастания");
 
 index = 0;
 int max = 0;
+int[] B = new int[10];
 
 while (index < A.Length)
 {
     if (A[index] > max)
     {
-        Console.WriteLine(A[index]);
+        B[index] = A[index];
+        Console.WriteLine(B[index]);
         max = A[index];
     }
     index++;
