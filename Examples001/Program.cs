@@ -26,29 +26,41 @@ while (index < A.Length)
 
 Console.WriteLine("massive B");
 
-int[] B = new int[10];
 index = 0;
-int max = A[0];
-Console.WriteLine(max);
+int max = 0;
+
 while (index < A.Length)
 {
     if (A[index] > max)
     {
-        B[index] = max;
-        Console.WriteLine(B[index]);
-        
-        max = B[index];
+        Console.WriteLine(A[index]);
+        max = A[index];
     }
     index++;
 }
 
 
-// index = 0;
-// int max = A[0];
-// while (index < A.Length)
-// {
-//     if (A[index] > max) B[index] = max;
-//     Console.WriteLine(B[index]);
-//     index++;
+Console.WriteLine("больше среднего арифметического элементов A");
 
-// }
+index = 0;
+int arifm = 0;
+
+while (index < A.Length)
+{
+    arifm = A[index] + arifm;
+    index++;
+}
+arifm = arifm / A.Length;
+Console.WriteLine(arifm);
+
+
+Console.WriteLine();
+index = 0;
+while (index < A.Length)
+{
+    if (arifm< A[index])
+    {
+        Console.WriteLine(A[index]);
+    }
+index++;
+}
