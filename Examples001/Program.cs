@@ -7,26 +7,31 @@
 // 2  больше среднего арифметического элементов A
 // 3  чётные
 
-
-int[] A = new int[10];
-int index = 0;
-while (index < A.Length)
+int[] NewArray(int count)
 {
-    A[index] = new Random().Next(10, 100);
-    index++;
+    int[] array = new int[count];
+    int index = 0;
+    while (index < array.Length)
+    {
+        array[index] = new Random().Next(10, 100);
+        index++;
+    }
+
+    index = 0;
+
+    while (index < array.Length)
+    {
+        Console.WriteLine(array[index]);
+        index++;
+    }
+    return array;
 }
 
-index = 0;
-
-while (index < A.Length)
-{
-    Console.WriteLine(A[index]);
-    index++;
-}
+int[] A = NewArray(10);
 
 Console.WriteLine("нарушают порядок возрастания");
 
-index = 0;
+int index = 0;
 int max = 0;
 int[] B = new int[10];
 
