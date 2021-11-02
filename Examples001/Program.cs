@@ -16,24 +16,28 @@ int[] NewArray(int count)
         array[index] = new Random().Next(10, 100);
         index++;
     }
-
-    index = 0;
-
-    while (index < array.Length)
-    {
-        Console.WriteLine(array[index]);
-        index++;
-    }
     return array;
 }
 
+int index = 0;
+
 int[] A = NewArray(10);
+
+//Печать массива
+
+while (index < A.Length)
+{
+    Console.WriteLine(A[index]);
+    index++;
+}
 
 Console.WriteLine("нарушают порядок возрастания");
 
-int index = 0;
+index = 0;
 int max = 0;
 int[] B = NewArray(10);
+
+//Заполняем В
 
 while (index < A.Length)
 {
