@@ -66,5 +66,20 @@ Diapason(2);
 
 // 21. Программа проверяет пятизначное число на палиндромом.
 
+void Palindrom(int number)
+{
+    int[] array = { 0, 0, 0, 0, 0 };
+    int tmp = 10;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = number % tmp;
+        Console.WriteLine($"{array[i]}");
+        tmp = tmp * 10;
+    }
+
+}
+
+Palindrom(12321);
 
 // 22. Найти расстояние между точками в пространстве 2D/3D
