@@ -25,14 +25,46 @@ WeekDay(3);
 
 void Kvadrat(int x, int y)
 {
-    if (y*y == x) Console.WriteLine("Число "+x+" является квадратом числа "+y);
-    else Console.WriteLine("Число "+x+" не является квадратом числа "+y);
+    if (y * y == x) Console.WriteLine("Число " + x + " является квадратом числа " + y);
+    else Console.WriteLine("Число " + x + " не является квадратом числа " + y);
 }
 
 Kvadrat(1201, 11);
 
 // 18. Проверить истинность утверждения ¬(X ˅ Y)= ¬X ˄ ¬Y
+
+void DisKon(int x, int y)
+{
+    //if (!(x && y) == !x & !y) Console.WriteLine("");
+
+}
+
+DisKon(10, 12);
+
 // 19. Определить номер четверти и плоскости, в которой находится точка с координатами Х и У, причем Х ≠ 0 и У ≠ 0
+
+void Chetvert(int x, int y)
+{
+    if (x > 0 && y < 0) Console.WriteLine("1 четверть");
+    if (x > 0 && y > 0) Console.WriteLine("2 четверть");
+    if (x < 0 && y > 0) Console.WriteLine("3 четверть");
+    if (x < 0 && y < 0) Console.WriteLine("4 четверть");
+}
+
+Chetvert(-6, 10);
+
 // 20. Задать номер четверти, показать диапазоны для возможных координат.
+
+void Diapason(int x)
+{
+    if (x == 1) Console.WriteLine("Диапазон координат: х от 0 до + ∞, у от 0 до - ∞");
+    if (x == 2) Console.WriteLine("Диапазон координат: х от 0 до + ∞, у от 0 до + ∞");
+    if (x == 3) Console.WriteLine("Диапазон координат: х от 0 до - ∞, у от 0 до + ∞");
+    if (x == 4) Console.WriteLine("Диапазон координат: х от 0 до - ∞, у от 0 до - ∞");
+}
+Diapason(2);
+
 // 21. Программа проверяет пятизначное число на палиндромом.
+
+
 // 22. Найти расстояние между точками в пространстве 2D/3D
