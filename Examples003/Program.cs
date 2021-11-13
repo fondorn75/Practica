@@ -57,12 +57,12 @@ Chetvert(-6, 10);
 
 void Diapason(int x)
 {
-    if (x == 1) Console.WriteLine("Диапазон координат: х от 0 до + ∞, у от 0 до - ∞");
-    if (x == 2) Console.WriteLine("Диапазон координат: х от 0 до + ∞, у от 0 до + ∞");
-    if (x == 3) Console.WriteLine("Диапазон координат: х от 0 до - ∞, у от 0 до + ∞");
-    if (x == 4) Console.WriteLine("Диапазон координат: х от 0 до - ∞, у от 0 до - ∞");
+    if (x == 1) Console.WriteLine("Диапазон координат: х от 0 до " + int.MaxValue + " у от 0 до " + int.MinValue);
+    if (x == 2) Console.WriteLine("Диапазон координат: х от 0 до " + int.MaxValue + " у от 0 до " + int.MaxValue);
+    if (x == 3) Console.WriteLine("Диапазон координат: х от 0 до " + int.MinValue + " у от 0 до " + int.MaxValue);
+    if (x == 4) Console.WriteLine("Диапазон координат: х от 0 до " + int.MinValue + " у от 0 до " + int.MinValue);
 }
-Diapason(2);
+Diapason(3);
 
 // 21. Программа проверяет пятизначное число на палиндромом.
 
