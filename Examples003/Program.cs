@@ -33,13 +33,16 @@ Kvadrat(1201, 11);
 
 // 18. Проверить истинность утверждения ¬(X ˅ Y)= ¬X ˄ ¬Y
 
-void DisKon(int x, int y)
+bool DisKon(bool x, bool y)
 {
-    //if (!(x && y) == !x & !y) Console.WriteLine("");
-
+    return !(x || y) == (!x && !y);
 }
 
-DisKon(10, 12);
+Console.WriteLine(DisKon(false, false));
+Console.WriteLine(DisKon(false, true));
+Console.WriteLine(DisKon(true, false));
+Console.WriteLine(DisKon(true, true));
+
 
 // 19. Определить номер четверти и плоскости, в которой находится точка с координатами Х и У, причем Х ≠ 0 и У ≠ 0
 
