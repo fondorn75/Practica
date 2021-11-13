@@ -23,15 +23,19 @@ WeekDay(3);
 
 // 17. По двум заданным числам проверять является ли одно квадратом другого.
 
-void Kvadrat(int x, int y)
+string Kvadrat(int x, int y)
 {
-    if (y * y == x) Console.WriteLine("Число " + x + " является квадратом числа " + y);
-    else Console.WriteLine("Число " + x + " не является квадратом числа " + y);
+    string result = string.Empty;
+    if (y * y == x) result = "Число " + x + " является квадратом числа " + y;
+    else result = "Число " + x + " не является квадратом числа " + y;
+    return result;
 }
 
-Kvadrat(1201, 11);
+Console.WriteLine(Kvadrat(121, 12));
 
 // 18. Проверить истинность утверждения ¬(X ˅ Y)= ¬X ˄ ¬Y
+
+Console.WriteLine();
 
 bool DisKon(bool x, bool y)
 {
@@ -69,20 +73,20 @@ Diapason(3);
 
 // 21. Программа проверяет пятизначное число на палиндромом.
 
-void Palindrom(int number)
+string Palindrom(int number)
 {
     int[] array = { 0, 0, 0, 0, 0 };
+    string result = string.Empty;
     string tmp = number.ToString();
 
     for (int i = 0; i < array.Length; i++)
     {
         array[i] = int.Parse(tmp[i].ToString());
-        Console.WriteLine($"{array[i]}");
     }
-    if (array[0] == array[4] && array[1] == array[3] && array[1] + 1 == array[2]) Console.WriteLine("Число полиндромно.");
-    else Console.WriteLine("Число не полиндромно");
+    if (array[0] == array[4] && array[1] == array[3] && array[1] + 1 == array[2]) result = "Число "+number+" полиндромно.";
+    else result = "Число "+number+" не полиндромно";
+    return result;
 }
-
-Palindrom(56765);
+Console.WriteLine(Palindrom(56765));
 
 // 22. Найти расстояние между точками в пространстве 2D/3D
