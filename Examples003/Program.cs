@@ -83,10 +83,31 @@ string Palindrom(int number)
     {
         array[i] = int.Parse(tmp[i].ToString());
     }
-    if (array[0] == array[4] && array[1] == array[3] && array[1] + 1 == array[2]) result = "Число "+number+" полиндромно.";
-    else result = "Число "+number+" не полиндромно";
+    if (array[0] == array[4] && array[1] == array[3] && array[1] + 1 == array[2]) result = "Число " + number + " полиндромно.";
+    else result = "Число " + number + " не полиндромно";
     return result;
 }
 Console.WriteLine(Palindrom(56765));
 
 // 22. Найти расстояние между точками в пространстве 2D/3D
+// Формула вычисления расстояния от точки A(xa, ya) до точки B(xb, yb) на плоскости:
+// AB = √(xb - xa)2 + (yb - ya)2
+// Формула вычисления расстояния от точки A(xa, ya, za) до точки B(xb, yb, zb) в пространстве:
+// AB = √(xb - xa)2 + (yb - ya)2 + (zb - za)2
+
+double Ploskost2D(double xa, double ya, double xb, double yb)
+{
+    int kv = 2;
+    double result = Math.Sqrt((Math.Pow((xb - xa), kv) + (Math.Pow((yb - ya), kv))));
+    return result;
+}
+
+double Ploskost3D(double xa, double ya, double za, double xb, double yb, double zb)
+{
+    int kv = 2;
+    double result = Math.Sqrt((Math.Pow((xb - xa), kv) + (Math.Pow((yb - ya), kv) + (Math.Pow((zb - za), kv)))));
+    return result;
+}
+
+Console.WriteLine(Ploskost2D(12, 5, -10, 20));
+Console.WriteLine(Ploskost3D(12, 5, -10, 20, 15, 25));
