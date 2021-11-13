@@ -69,17 +69,17 @@ Diapason(3);
 void Palindrom(int number)
 {
     int[] array = { 0, 0, 0, 0, 0 };
-    int tmp = 10;
+    string tmp = number.ToString();
 
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = number % tmp;
+        array[i] = int.Parse(tmp[i].ToString());
         Console.WriteLine($"{array[i]}");
-        tmp = tmp * 10;
     }
-
+    if (array[0] == array[4] && array[1] == array[3] && array[1] + 1 == array[2]) Console.WriteLine("Число полиндромно.");
+    else Console.WriteLine("Число не полиндромно");
 }
 
-Palindrom(12321);
+Palindrom(56765);
 
 // 22. Найти расстояние между точками в пространстве 2D/3D
