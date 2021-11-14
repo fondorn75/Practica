@@ -169,13 +169,13 @@ RandomNumber();
 
 Console.WriteLine("Удалить вторую цифру трёхзначного числа");
 
-void DelNumber(int x1)
+int DelNumber(int x1)
 {
     string str = x1.ToString();
     int x2 = int.Parse(str[0].ToString() + str[2].ToString());
-    Console.WriteLine(x2);
+    return x2;
 }
-DelNumber(486);
+Console.WriteLine(DelNumber(486));
 
 // 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
 
