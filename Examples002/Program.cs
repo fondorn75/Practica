@@ -200,15 +200,17 @@ Console.WriteLine(Kratnoe(12, 5));
 
 Console.WriteLine("Найти третью цифру числа или сообщить, что её нет");
 
-void ThreeNumber(int x0)
+string ThreeNumber(int x0)
 {
-    if (x0 / 100 == 0) Console.WriteLine("Третьей цифры нет.");
+    string res = string.Empty;
+    if (x0 / 100 == 0) res = "Третьей цифры нет.";
     else
     {
         int threeNumber = x0 % 10;
-        Console.WriteLine("Третья цифра: " + threeNumber);
+        res = "Третья цифра: " + threeNumber;
     }
+    return res;
 }
 
-ThreeNumber(49);
+Console.WriteLine(ThreeNumber(459));
 
