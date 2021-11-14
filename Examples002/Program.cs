@@ -181,18 +181,20 @@ Console.WriteLine(DelNumber(486));
 
 Console.WriteLine("кратно ли число заданному, если нет, вывести остаток.");
 
-void Kratnoe(int x1, int x2)
+string Kratnoe(int x1, int x2)
 {
     int ostatok = 0;
-    if (x1 % x2 == 0) Console.WriteLine("Число " + x1 + " кратное числу " + x2);
+    string res = string.Empty;
+    if (x1 % x2 == 0) res = ("Число " + x1 + " кратное числу " + x2);
     else
     {
         ostatok = x1 % x2;
-        Console.WriteLine(ostatok);
+        res = "Число " + x1 + " не кратно числу " + x2 + " имеется остаток - " + ostatok;
     }
+    return res;
 }
 
-Kratnoe(12, 4);
+Console.WriteLine(Kratnoe(12, 5));
 
 // 14. Найти третью цифру числа или сообщить, что её нет
 
