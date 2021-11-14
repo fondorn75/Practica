@@ -1,14 +1,13 @@
 ﻿// 0. Вывести квадрат числа 
 
 Console.WriteLine("Вывести квадрат числа");
-int kvadrat()
+int kvadrat(int x)
 {
-    int x = 12;
     int result = x * x;
     return result;
 }
 
-int kv = kvadrat();
+int kv = kvadrat(14);
 Console.WriteLine(kv);
 
 // 1. По двум заданным числам проверять является ли первое квадратом второго
