@@ -13,86 +13,73 @@ Console.WriteLine(kv);
 // 1. По двум заданным числам проверять является ли первое квадратом второго
 
 Console.WriteLine("является ли первое квадратом второго");
-void FirstKvadrat()
+string FirstKvadrat(int x, int y)
 {
-    int x = 64;
-    int y = 8;
-    if (y * y == x)
-    {
-        Console.WriteLine("Первое число является квадратом второго.");
-    }
-    else
-    {
-        Console.WriteLine("Первое число не является квадратом второго.");
-    }
+    string res = string.Empty;
+    if (y * y == x) res = "Число " + x + " является квадратом числа " + y;
+    else res = "Число " + x + " не является квадратом числа " + y;
+    return res;
 }
 
-FirstKvadrat();
+Console.WriteLine(FirstKvadrat(121, 11));
 
 // 2. Даны два числа. Показать большее и меньшее число 
 
 Console.WriteLine("Показать большее и меньшее число");
-void MaxOrMin()
-{
-    int x = 5;
-    int y = 8;
 
-    if (x > y)
-    {
-        Console.WriteLine("Большее число " + x);
-        Console.WriteLine("Меньшее число " + y);
-    }
-    else
-    {
-        Console.WriteLine("Большее число " + y);
-        Console.WriteLine("Меньшее число " + x);
-    }
+string MaxOrMin(int x, int y)
+{
+    string res = string.Empty;
+    if (x > y) res = $"{"Большее число - " + x}, {"Меньшее число - " + y}";
+    else res = $"{"Большее число - " + y}, {"Меньшее число - " + x}";
+    return res;
 }
 
-MaxOrMin();
+Console.WriteLine(MaxOrMin(5, 8));
 
 // 3. По заданному номеру дня недели вывести его название
 
 Console.WriteLine("По заданному номеру дня недели вывести его название");
-void Weeks(int day)
+
+string Weeks(int day)
 {
     string[] days = { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
-    Console.WriteLine(days[day - 1]);
-
+    return days[day - 1];
 }
 
-Weeks(7);
+Console.WriteLine(Weeks(7));
 
 // 4. Найти максимальное из трех чисел 
 
 Console.WriteLine("Найти максимальное из трех чисел");
-void MaxInThree()
+
+int MaxInThree()
 {
-    int[] number = { 10, 4, 9 };
+    int[] array = { 45, 35, 48 };
     int max = 0;
 
-    for (int i = 0; i < number.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (number[i] > max) max = number[i];
+        if (array[i] > max) max = array[i];
     }
 
-    Console.WriteLine(max);
+    return max;
 }
 
-MaxInThree();
+Console.WriteLine(MaxInThree());
 
 // 5. Написать программу вычисления значения функции y=sin(a) (синус или косинус)
 
 Console.WriteLine("Вычисление значения функции y=sin(a)");
-void Sinus(double a)
+
+double Sinus(double a)
 {
     double y = 0;
     y = Math.Sin(a);
-    Console.WriteLine(y);
-
+    return y;
 }
 
-Sinus(10);
+Console.WriteLine(Sinus(45));
 
 // 6. Выяснить является ли число чётным 
 
@@ -138,15 +125,15 @@ ArrayNumbers(5);
 // 9. Показать последнюю цифру трёхзначного числа
 
 Console.WriteLine("Показать последнюю цифру трёхзначного числа");
-int number = 123;
-string end = Convert.ToString(number);
+int array = 123;
+string end = Convert.ToString(array);
 Console.WriteLine(end[2]);
 
 // 10. Показать вторую цифру трёхзначного числа
 
 Console.WriteLine("Показать вторую цифру трёхзначного числа");
-number = 258;
-end = Convert.ToString(number);
+array = 258;
+end = Convert.ToString(array);
 Console.WriteLine(end[1]);
 
 // 11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
