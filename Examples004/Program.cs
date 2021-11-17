@@ -61,7 +61,20 @@ Console.WriteLine(Summa(5));
 
 // 26. Возведите число А в натуральную степень B используя цикл
 
+string NatSt(int a, int b)
+{
+    string res = string.Empty;
+    int tmp = 0;
 
+    for (int i = 1; i <= b; i++)
+    {
+        tmp = Convert.ToInt32(Math.Pow(a, i));
+        res += tmp + " ";
+    }
+
+    return res;
+}
+Console.WriteLine(NatSt(2, 3));
 
 // 27. Определить количество цифр в числе
 // 28. Подсчитать сумму цифр в числе
