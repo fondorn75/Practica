@@ -101,4 +101,37 @@ int SummNumber(int x)
 Console.WriteLine(SummNumber(278));
 
 // 29. Написать программу вычисления произведения чисел от 1 до N
+
+string MultiNum(int n)
+{
+    int num = 1;
+    string result = string.Empty;
+    for (int i = 1; i <= n; i++)
+    {
+        num = num * i;
+        result += num + " ";
+    }
+    return result;
+}
+Console.WriteLine(MultiNum(5));
+
 // 30. Показать кубы чисел, заканчивающихся на четную цифру
+
+string KubNum(int[] array)
+{
+    string result = string.Empty;
+    int kv = 3;
+    int tmp = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        tmp = Convert.ToInt32(Math.Pow(array[i], kv));
+
+        if (tmp % 2 == 0) result += tmp + " ";
+    }
+
+
+    return result;
+}
+
+int[] KubArray = TabKvadrat(12);
+Console.WriteLine(KubNum(KubArray));
