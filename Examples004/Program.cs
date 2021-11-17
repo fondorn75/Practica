@@ -77,6 +77,15 @@ string NatSt(int a, int b)
 Console.WriteLine(NatSt(2, 3));
 
 // 27. Определить количество цифр в числе
+
+int KolNumber(int x)
+{
+    string res = Convert.ToString(x);
+    int tmp = Convert.ToInt32(res.Length);
+    return tmp;
+}
+Console.WriteLine(KolNumber(145623));
+
 // 28. Подсчитать сумму цифр в числе
 // 29. Написать программу вычисления произведения чисел от 1 до N
 // 30. Показать кубы чисел, заканчивающихся на четную цифру
