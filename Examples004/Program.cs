@@ -87,5 +87,18 @@ int KolNumber(int x)
 Console.WriteLine(KolNumber(145623));
 
 // 28. Подсчитать сумму цифр в числе
+
+int SummNumber(int x)
+{
+    string res = Convert.ToString(x);
+    int tmp = 0;
+    for (int i = 0; i < res.Length; i++)
+    {
+        tmp += Convert.ToInt32(res[i].ToString());
+    }
+    return tmp;
+}
+Console.WriteLine(SummNumber(278));
+
 // 29. Написать программу вычисления произведения чисел от 1 до N
 // 30. Показать кубы чисел, заканчивающихся на четную цифру
