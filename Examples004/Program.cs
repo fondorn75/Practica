@@ -31,10 +31,11 @@ Console.WriteLine(PrintArr(NewArray));
 int[] TabKub(int n)
 {
     int result = 1;
+    int kv = 3;
     int[] array = new int[n];
     for (int i = 0; i < n; i++)
     {
-        array[i] = result * result * result;
+        array[i] = Convert.ToInt32(Math.Pow(result, kv));
         result++;
     }
     return array;
