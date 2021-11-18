@@ -63,20 +63,20 @@ Console.WriteLine(Zamena(arr));
 
 // 35. Определить, присутствует ли в заданном массиве, некоторое число 
 
-string ProverkaNum(int[] array, int n)
+string ProverkaNum(int[] arr, int n)
 {
     string result = string.Empty;
 
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        if (array[i] == n) result = "Число" + n + " есть в массиве";
+        if (arr[i] == n) result = "Число" + n + " есть в массиве";
         else result = "Числа " + n + " нет в массиве";
     }
 
     return result;
 }
 
-Console.WriteLine(ProverkaNum(arr, -6));
+Console.WriteLine(ProverkaNum(arr, 0));
 
 // 36. Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
 // 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
