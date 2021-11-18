@@ -69,16 +69,53 @@ string ProverkaNum(int[] arr, int n)
 
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] == n) result = "Число" + n + " есть в массиве";
-        else result = "Числа " + n + " нет в массиве";
+        if (arr[i] == n)
+        {
+            result = "Число " + n + " есть в массиве";
+            break;
+        }
+        else result = "Числа " + n + " нет в массиве"; ;
     }
 
     return result;
 }
 
-Console.WriteLine(ProverkaNum(arr, 0));
+Console.WriteLine(ProverkaNum(arr, 2));
 
 // 36. Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
+
+int[] NewArray2(int n)
+{
+    int[] array = new int[n];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(100, 1000);
+    }
+
+    return array;
+}
+
+int[] arraynew = NewArray2(12);
+
+Console.WriteLine(PrintArray(arraynew));
+
+string ChetNechet(int[] array)
+{
+    string result = string.Empty;
+    int chet = 0;
+    int nechet = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0) chet++;
+        else nechet++;
+    }
+    result = "Четных чисел - " + chet + ", а нечетных - " + nechet;
+    return result;
+}
+
+Console.WriteLine(ChetNechet(arraynew));
+
 // 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
