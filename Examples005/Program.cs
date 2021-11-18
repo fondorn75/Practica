@@ -117,6 +117,53 @@ string ChetNechet(int[] array)
 Console.WriteLine(ChetNechet(arraynew));
 
 // 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
+
+
+
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
+
+string Nechet(int[] array)
+{
+    string result = string.Empty;
+    int summ = 0;
+    string itog = string.Empty;
+    for (int i = 1; i < array.Length; i += 2)
+    {
+        result += array[i] + " ";
+        summ += array[i];
+    }
+
+    itog = "Массив: " + result + " Сумма: " + summ;
+    return itog;
+}
+
+Console.WriteLine(Nechet(arraynew));
+
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+
+
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
+
+int MinNumber(int[] array)
+{
+    int min = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min) min = array[i];
+    }
+
+    return min;
+}
+int MaxNumber(int[] array)
+{
+    int max = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > max) max = array[i];
+    }
+
+    return max;
+}
+
+Console.WriteLine(MinNumber(arraynew) + MaxNumber(arraynew));
