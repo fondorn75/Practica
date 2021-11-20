@@ -1,13 +1,13 @@
 ﻿// 31. Задать массив из 8 элементов и вывести их на экран 
 // 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их на экран 
 
-int[] NewArray(int n)
+int[] NewArray(int n, int x, int y)
 {
     int[] array = new int[n];
 
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(0, 2);
+        array[i] = new Random().Next(x, y);
     }
 
     return array;
@@ -23,7 +23,7 @@ string PrintArray(int[] array)
     return result;
 }
 
-Console.WriteLine(PrintArray(NewArray(8)));
+Console.WriteLine(PrintArray(NewArray(8, 0, 2)));
 
 
 // 33. Задать массив из 12 элементов, заполненных числами из [0,9]. Найти сумму положительных/отрицательных элементов массива
@@ -141,7 +141,20 @@ Console.WriteLine(ChetNechet(arraynew));
 
 // 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
 
+int[] array123 = NewArray(123, 0, 500);
 
+int KolEl(int[] array)
+{
+    int kolvo = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] >= 10 && array[i] <= 99) kolvo++;
+    }
+    return kolvo;
+}
+
+Console.WriteLine(PrintArray(array123));
+Console.WriteLine("Количество элементов из отрезка [10,99] = " + KolEl(array123));
 
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 
