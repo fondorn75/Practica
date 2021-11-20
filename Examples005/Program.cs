@@ -44,6 +44,29 @@ int[] arr = NewArr(12);
 
 Console.WriteLine(PrintArray(arr));
 
+int SummaPol(int[] array)
+{
+    int summa = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0) summa += array[i];
+    }
+
+    return summa;
+}
+int SummaOtr(int[] array)
+{
+    int summa = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < 0) summa += array[i];
+    }
+
+    return summa;
+}
+Console.WriteLine("Сумма положительных элементов массива = " + SummaPol(arr));
+Console.WriteLine("Сумма отрицательных элементов массива = " + SummaOtr(arr));
+
 // 34. Написать программу замену элементов массива на противоположные
 
 string Zamena(int[] array)
