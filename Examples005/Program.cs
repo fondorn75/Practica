@@ -177,7 +177,29 @@ Console.WriteLine(Nechet(arraynew));
 
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
+int[] arrayodnomer = NewArray(12, 1, 10);
 
+string ProisvPar(int[] array)
+{
+    string result = string.Empty;
+    int proisv = 0;
+    int j = array.Length - 1;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length / 2)
+        {
+            proisv = array[i] * array[j];
+            result += proisv + " ";
+            j--;
+        }
+
+    }
+
+    return result;
+}
+
+Console.WriteLine(PrintArray(arrayodnomer));
+Console.WriteLine(ProisvPar(arrayodnomer));
 
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
 
@@ -201,5 +223,5 @@ int MaxNumber(int[] array)
 
     return max;
 }
-
-Console.WriteLine(MinNumber(arraynew) + MaxNumber(arraynew));
+int rasnitca = MinNumber(arraynew) + MaxNumber(arraynew);
+Console.WriteLine("Разница между максимальным и минимальным элементом = " + rasnitca);
