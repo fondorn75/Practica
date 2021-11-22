@@ -42,7 +42,25 @@ Console.WriteLine(NumerDez(248));
 
 // 45. Показать числа Фибоначчи
 
+string Fibonacci(int n)
+{
+    string result = string.Empty;
+    int tmp = 0;
+    int tmp1 = 0;
+    int tmp2 = 1;
 
+    for (int i = 0; i < n; i++)
+    {
+        tmp = tmp1 + tmp2;
+        tmp1 = tmp2;
+        tmp2 = tmp;
+        result += tmp + " ";
+    }
+
+    return result;
+}
+
+Console.WriteLine(Fibonacci(20));
 
 // 46. Написать программу масштабирования фигуры
 
