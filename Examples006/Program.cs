@@ -38,7 +38,18 @@ Console.WriteLine(NumerDez(248));
 
 // 44. Найти точку пересечения двух прямых заданных уравнением y = k1 * x + b1, y = k2 * x + b2, b1 k1 и b2 и k2 заданы
 
+string TochkaPer(int b1, int b2, int k1, int k2)
+{
+    string result = string.Empty;
+    int x = 0;
+    int y = 0;
+    x = (b2 - b1) / (k1 - k2);
+    y = ((b2 * k1) - (b1 * k2)) / (k1 - k2);
+    result = "x = " + x + " y = " + y;
+    return result;
+}
 
+Console.WriteLine(TochkaPer(3, -1, 4, 2));
 
 // 45. Показать числа Фибоначчи
 
