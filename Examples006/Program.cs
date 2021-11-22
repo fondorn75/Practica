@@ -23,7 +23,35 @@ Console.WriteLine(Triangle(10, 10, 10));
 
 // 42. Определить сколько чисел больше 0 введено с клавиатуры
 
+int number = Convert.ToInt32(Console.ReadLine());
 
+int[] FillArray(int x)
+{
+    int index = 0;
+    int tmp = 0;
+    int[] arr = new int[6];
+    while (x > 0)
+    {
+        arr[index] = x % 10;
+        tmp = x / 10;
+        x = tmp;
+        index++;
+    }
+
+    return arr;
+}
+
+string PrintArray(int[] array)
+{
+    string result = string.Empty;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0) result += array[i] + " ";
+    }
+    return result;
+}
+
+Console.WriteLine(PrintArray(FillArray(number)));
 
 // 43. Написать программу преобразования десятичного числа в двоичное
 
