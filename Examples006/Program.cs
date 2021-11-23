@@ -27,17 +27,15 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int[] FillArray(int x)
 {
-    int index = 0;
     int tmp = 0;
-    int[] arr = new int[6];
-    while (x > 0)
+    string str = Convert.ToString(x);
+    int[] arr = new int[str.Length];
+    for (int i = 0; i < str.Length; i++)
     {
-        arr[index] = x % 10;
+        arr[i] = x % 10;
         tmp = x / 10;
         x = tmp;
-        index++;
     }
-
     return arr;
 }
 
