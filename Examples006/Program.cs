@@ -101,6 +101,52 @@ Console.WriteLine(Fibonacci(20));
 
 // 46. Написать программу масштабирования фигуры
 
+int[,] FillArray2(int x, int y)
+{
+    int[,] array = new int[x, y];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(0, 4);
+        }
+    }
+    return array;
+}
 
+int[,] newarray = FillArray2(4, 2);
 
-// 47. Написать программу копирования массива
+void PrintArray2(int[,] tabl)
+{
+    for (int i = 0; i < tabl.GetLength(0); i++)
+    {
+        for (int j = 0; j < tabl.GetLength(1); j++)
+        {
+            Console.Write($"{tabl[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+PrintArray2(newarray);
+Console.WriteLine();
+
+void Scale(int[,] array, int k)
+{
+    string result = string.Empty;
+    int[,] array2 = new int[array.GetLength(0), array.GetLength(1)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array2[i, j] = array[i, j] * k;
+            Console.Write($"{array2[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+
+}
+
+Scale(newarray, 2);
+
+//47. Написать программу копирования массива
