@@ -114,8 +114,6 @@ int[,] FillArray2(int x, int y)
     return array;
 }
 
-int[,] newarray = FillArray2(4, 2);
-
 void PrintArray2(int[,] tabl)
 {
     for (int i = 0; i < tabl.GetLength(0); i++)
@@ -127,9 +125,6 @@ void PrintArray2(int[,] tabl)
         Console.WriteLine();
     }
 }
-
-PrintArray2(newarray);
-Console.WriteLine();
 
 void Scale(int[,] array, int k)
 {
@@ -147,6 +142,9 @@ void Scale(int[,] array, int k)
 
 }
 
+int[,] newarray = FillArray2(4, 2);
+PrintArray2(newarray);
+Console.WriteLine();
 Scale(newarray, 2);
 
 //47. Написать программу копирования массива
