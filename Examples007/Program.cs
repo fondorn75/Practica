@@ -76,7 +76,23 @@ Console.WriteLine(PrintArray(ArrayNK_New2));
 
 // 52. В двумерном массиве заменить элементы, у которых оба индекса чётные на их квадраты
 
+int[,] KvadratArray(int[,] array)
+{
+    int[,] result = new int[array.GetLength(0), array.GetLength(1)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i % 2 == 0 & j % 2 == 0) result[i, j] = array[i, j] * array[i, j];
+            else result[i, j] = array[i, j];
+        }
+    }
 
+    return result;
+}
+
+int[,] ArrayNK_New3 = KvadratArray(ArrayMN);
+Console.WriteLine(PrintArray(ArrayNK_New3));
 
 // 53. В двумерном массиве показать позиции числа, заданного пользователем или указать, что такого элемента нет
 
