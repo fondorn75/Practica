@@ -41,15 +41,23 @@ Console.WriteLine(PrintArray(ArrayMN2));
 
 int[,] ArrayNK(int[,] array)
 {
-    int[,] result = new int[array.GetLength(0), array.GetLength(1)];
+    //int[,] result = new int[array.GetLength(0), array.GetLength(1)];
+    int tmp = 0;
+    int length = array.Length;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            result[array.GetLength(0) - i - 1, array.GetLength(1) - j - 1] = array[i, j];
+            if (array[i + 1, j + 1] != length)
+            {
+                tmp = array[i, j];
+                array[i, j] = array[i + 1, j + 1];
+                array[i + 1, j + 1] = tmp;
+            }
+            //array[array.GetLength(0) - i - 1, array.GetLength(1) - j - 1] = array[i, j];
         }
     }
-    return result;
+    return array;
 }
 
 int[,] ArrayNK_New = ArrayNK(ArrayMN);
