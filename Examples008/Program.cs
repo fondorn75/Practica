@@ -11,7 +11,7 @@
     return arr;
 }
 
-int[,] image = new int[,]
+int[,] koloda = new int[,]
 {
     {2,2,2,2},
     {3,3,3,3},
@@ -23,9 +23,9 @@ int[,] image = new int[,]
     {9,9,9,9},
     {10,10,10,10},
     {11,11,11,11},
-    {12,12,12,12},
-    {13,13,13,13},
-    {14,14,14,14},
+    {10,10,10,10},
+    {10,10,10,10},
+    {10,10,10,10},
 };
 
 int[,] RandomArray(int[,] array)
@@ -63,6 +63,6 @@ string PrintArray(int[,] array)
 
 int[,] arraynew = NewArray(13, 4);
 
-Console.WriteLine(PrintArray(image));
-RandomArray(image);
-Console.WriteLine(PrintArray(image));
+Console.WriteLine(PrintArray(koloda));
+RandomArray(koloda);
+Console.WriteLine(PrintArray(koloda));
