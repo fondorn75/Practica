@@ -1,17 +1,4 @@
-﻿int[,] NewArray(int x, int y)
-{
-    int[,] arr = new int[x, y];
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            arr[i, j] = new Random().Next(2, 12);
-        }
-    }
-    return arr;
-}
-
-int[,] koloda = new int[,]
+﻿int[,] koloda = new int[,]
 {
     {2,2,2,2},
     {3,3,3,3},
@@ -60,8 +47,6 @@ string PrintArray(int[,] array)
     }
     return result;
 }
-
-int[,] arraynew = NewArray(13, 4);
 
 Console.WriteLine(PrintArray(koloda));
 RandomArray(koloda);
