@@ -24,9 +24,13 @@ int RandomNumber()
 
 int PlayerNumber()
 {
-    Console.Write("Введите число: ");
-    int playerNumber = Convert.ToInt32(Console.ReadLine());
-    return playerNumber;
+    while (true)
+    {
+        Console.Write("Введите число: ");
+        string text = Console.ReadLine()!;
+        if (int.TryParse(text, out int number)) return number;
+        else Console.WriteLine("Вы ввели не число.");
+    }
 }
 
 string GameOver(int number)
