@@ -56,7 +56,10 @@ int newnumber = 0;
 void Game(int pc)
 {
     int player = PlayerNumber();
-    if (pc == player) Console.WriteLine(GameOver(player));
+    if (pc == player)
+    {
+        Console.WriteLine(GameOver(player));
+    }
     else if (pc > player)
     {
         Console.WriteLine(NumberMin());
