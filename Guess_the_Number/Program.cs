@@ -15,6 +15,10 @@
 
 // int SecretNumber = createNumber(1, 100); int PlayersNumber = requestNumber();
 
+//Объявляем переменные
+int newNumber = 0;
+int numberOfAttempts = 8;
+
 int RandomNumber()
 {
     int number = 0;
@@ -51,27 +55,33 @@ string NumberMin()
     return text;
 }
 
-int newnumber = 0;
-
 void Game(int pc)
 {
     int player = PlayerNumber();
-    if (pc == player)
+    numberOfAttempts--;
+    Console.WriteLine("У вас осталось: " + numberOfAttempts + " попыток");
+    if (numberOfAttempts == 0)
+    {
+        Console.WriteLine("У вас осталось " + numberOfAttempts + " попыток. Игра закончена.");
+    }
+    else if (pc == player)
     {
         Console.WriteLine(GameOver(player));
     }
     else if (pc > player)
     {
         Console.WriteLine(NumberMin());
-        Game(newnumber);
+        Game(newNumber);
     }
     else if (pc < player)
     {
         Console.WriteLine(NumberMax());
-        Game(newnumber);
+        Game(newNumber);
     }
 }
 
-newnumber = RandomNumber();
+Console.WriteLine("Загадано число от 10 до 100.\nУ вас есть " + numberOfAttempts + " попыток, чтобы его найти.");
+
+newNumber = RandomNumber();
 //Console.WriteLine(newnumber);
-Game(newnumber);
+Game(newNumber);
