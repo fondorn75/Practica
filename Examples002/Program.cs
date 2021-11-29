@@ -95,17 +95,18 @@ Chetnoe(12);
 // 7. Показать числа от -N до N 
 
 Console.WriteLine("Показать числа от -N до N");
-void Numbers(int n)
-{
-    int length = n + n;
-    for (int i = 0; i < length + 1; i++)
-    {
 
-        Console.WriteLine(-n + i);
+string ShowNumbers(int n)
+{
+    string result = string.Empty;
+    for (int i = -n; i < n + 1; i++)
+    {
+        result += i + " ";
     }
 
+    return result;
 }
-Numbers(5);
+Console.WriteLine(ShowNumbers(5));
 
 // 8. Показать четные числа от 1 до N 
 
