@@ -19,6 +19,7 @@
 int newNumber = 0;
 int numberOfAttempts = 8;
 
+//Массив - конец игры
 int[,] gameOver = new int[,]
 {
 {0,0,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,0,0,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1},
@@ -31,6 +32,7 @@ int[,] gameOver = new int[,]
 {0,0,1,1,1,1,1,1,1,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0,0,0,0,0,0,1,1,0,0,0,1,1,1},
 };
 
+//Печать массива
 void PrintArray(int[,] tabl)
 {
     for (int i = 0; i < tabl.GetLength(0); i++)
@@ -44,6 +46,7 @@ void PrintArray(int[,] tabl)
     }
 }
 
+//Создаем случайное число
 int RandomNumber()
 {
     int number = 0;
@@ -51,6 +54,7 @@ int RandomNumber()
     return number;
 }
 
+//Получаем число от игрока
 int PlayerNumber()
 {
     while (true)
@@ -62,24 +66,28 @@ int PlayerNumber()
     }
 }
 
+//Конец игры, если игрок угадал
 string GameOver(int number)
 {
     string text = "Вы угадали, это число: " + number;
     return text;
 }
 
+//Сообщаем о том, что число больше загаданного
 string NumberMax()
 {
     string text = "Ваше число больше загаданного.";
     return text;
 }
 
+//Сообщаем о том, что число меньше загаданного
 string NumberMin()
 {
     string text = "Ваше число меньше загаданного.";
     return text;
 }
 
+//ОСновной модуль игры
 void Game(int pc)
 {
     int player = PlayerNumber();
@@ -106,8 +114,11 @@ void Game(int pc)
     }
 }
 
+//Выводим правила игры в консоль
 Console.WriteLine("Загадано число от 10 до 100.\nУ вас есть " + numberOfAttempts + " попыток, чтобы его найти.");
 
+//Принимаем в переменную загаданное число
 newNumber = RandomNumber();
-//Console.WriteLine(newnumber);
+
+//Запуск игры
 Game(newNumber);
