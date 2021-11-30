@@ -25,7 +25,7 @@ Console.WriteLine(DayOfWeek(7));
 
 // 17. По двум заданным числам проверять является ли одно квадратом другого.
 
-string Kvadrat(int x, int y)
+string SquareNumber(int x, int y)
 {
     string result = string.Empty;
     if (y * y == x) result = "Число " + x + " является квадратом числа " + y;
@@ -33,49 +33,55 @@ string Kvadrat(int x, int y)
     return result;
 }
 
-Console.WriteLine(Kvadrat(121, 12));
+Console.WriteLine(SquareNumber(121, 12));
 
 // 18. Проверить истинность утверждения ¬(X ˅ Y)= ¬X ˄ ¬Y
 
 Console.WriteLine();
 
-bool DisKon(bool x, bool y)
+bool TrueStatement(bool x, bool y)
 {
     return !(x || y) == (!x && !y);
 }
 
-Console.WriteLine(DisKon(false, false));
-Console.WriteLine(DisKon(false, true));
-Console.WriteLine(DisKon(true, false));
-Console.WriteLine(DisKon(true, true));
+Console.WriteLine(TrueStatement(false, false));
+Console.WriteLine(TrueStatement(false, true));
+Console.WriteLine(TrueStatement(true, false));
+Console.WriteLine(TrueStatement(true, true));
 
 
 // 19. Определить номер четверти и плоскости, в которой находится точка с координатами Х и У, причем Х ≠ 0 и У ≠ 0
 
-void Chetvert(int x, int y)
+string Quadrant(int x, int y)
 {
-    if (x > 0 && y < 0) Console.WriteLine("1 четверть");
-    if (x > 0 && y > 0) Console.WriteLine("2 четверть");
-    if (x < 0 && y > 0) Console.WriteLine("3 четверть");
-    if (x < 0 && y < 0) Console.WriteLine("4 четверть");
+    string result = string.Empty;
+    if (x > 0 && y < 0) result = "1 четверть";
+    if (x > 0 && y > 0) result = "2 четверть";
+    if (x < 0 && y > 0) result = "3 четверть";
+    if (x < 0 && y < 0) result = "4 четверть";
+
+    return result;
 }
 
-Chetvert(-6, 10);
+Console.WriteLine(Quadrant(-6, 10));
 
 // 20. Задать номер четверти, показать диапазоны для возможных координат.
 
-void Diapason(int x)
+string CoordinateRange(int x)
 {
-    if (x == 1) Console.WriteLine("Диапазон координат: х от 0 до " + int.MaxValue + " у от 0 до " + int.MinValue);
-    if (x == 2) Console.WriteLine("Диапазон координат: х от 0 до " + int.MaxValue + " у от 0 до " + int.MaxValue);
-    if (x == 3) Console.WriteLine("Диапазон координат: х от 0 до " + int.MinValue + " у от 0 до " + int.MaxValue);
-    if (x == 4) Console.WriteLine("Диапазон координат: х от 0 до " + int.MinValue + " у от 0 до " + int.MinValue);
+    string result = string.Empty;
+    if (x == 1) result = "Диапазон координат: х от 0 до " + int.MaxValue + ", у от 0 до " + int.MinValue;
+    if (x == 2) result = "Диапазон координат: х от 0 до " + int.MaxValue + ", у от 0 до " + int.MaxValue;
+    if (x == 3) result = "Диапазон координат: х от 0 до " + int.MinValue + ", у от 0 до " + int.MaxValue;
+    if (x == 4) result = "Диапазон координат: х от 0 до " + int.MinValue + ", у от 0 до " + int.MinValue;
+
+    return result;
 }
-Diapason(3);
+Console.WriteLine(CoordinateRange(3));
 
 // 21. Программа проверяет пятизначное число на палиндромом.
 
-string Palindrom(int number)
+string PalindromeNumber(int number)
 {
     int[] array = { 0, 0, 0, 0, 0 };
     string result = string.Empty;
@@ -89,7 +95,7 @@ string Palindrom(int number)
     else result = "Число " + number + " не полиндромно";
     return result;
 }
-Console.WriteLine(Palindrom(56765));
+Console.WriteLine(PalindromeNumber(56765));
 
 // 22. Найти расстояние между точками в пространстве 2D/3D
 // Формула вычисления расстояния от точки A(xa, ya) до точки B(xb, yb) на плоскости:
