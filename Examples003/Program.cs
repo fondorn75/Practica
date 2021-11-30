@@ -1,25 +1,27 @@
 ﻿// 15. Дано число. проверить кратно ли оно 7 и 23.
 
-void Kratno(int a)
+string Multiple(int number)
 {
-    if (a % 7 == 0 && a % 23 == 0) Console.WriteLine("Число кратно 7 и 23");
-    else Console.WriteLine("Число не кратно 7 и 23");
+    string result = string.Empty;
+    if (number % 7 == 0 && number % 23 == 0) result = "Число кратно 7 и 23";
+    else result = "Число не кратно 7 и 23";
+    return result;
 }
 
-Kratno(161);
+Console.WriteLine(Multiple(160));
 
 // 16. Дано число, обозначающее день недели. Выяснить является номер дня недели выходным.
 
-void WeekDay(int a)
+string DayOfWeek(int a)
 {
     string[] days = { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
-
-    if (a == 6) Console.WriteLine("Сегодня выходной: " + days[a - 1]);
-    else if (a == 7) Console.WriteLine("Сегодня выходной: " + days[a - 1]);
-    else Console.WriteLine("Сегодня будний день: " + days[a - 1]);
+    string result = string.Empty;
+    if (a == 6 || a == 7) result = "Сегодня выходной: " + days[a - 1];
+    else result = "Сегодня будний день: " + days[a - 1];
+    return result;
 }
 
-WeekDay(3);
+Console.WriteLine(DayOfWeek(7));
 
 // 17. По двум заданным числам проверять является ли одно квадратом другого.
 
