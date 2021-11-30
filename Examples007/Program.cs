@@ -39,29 +39,29 @@ Console.WriteLine(PrintArray(ArrayMN2));
 
 // 50. В двумерном массиве n×k заменить четные элементы на противоположные
 
-int[,] ArrayNK(int[,] array)
-{
-    //int[,] result = new int[array.GetLength(0), array.GetLength(1)];
-    int tmp = 0;
-    int length = array.Length;
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (array[i + 1, j + 1] != length)
-            {
-                tmp = array[i, j];
-                array[i, j] = array[i + 1, j + 1];
-                array[i + 1, j + 1] = tmp;
-            }
-            //array[array.GetLength(0) - i - 1, array.GetLength(1) - j - 1] = array[i, j];
-        }
-    }
-    return array;
-}
+// int[,] ArrayNK(int[,] array)
+// {
+//     //int[,] result = new int[array.GetLength(0), array.GetLength(1)];
+//     int tmp = 0;
+//     int length = array.Length;
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (array[i + 1, j + 1] != length)
+//             {
+//                 tmp = array[i, j];
+//                 array[i, j] = array[i + 1, j + 1];
+//                 array[i + 1, j + 1] = tmp;
+//             }
+//             //array[array.GetLength(0) - i - 1, array.GetLength(1) - j - 1] = array[i, j];
+//         }
+//     }
+//     return array;
+// }
 
-int[,] ArrayNK_New = ArrayNK(ArrayMN);
-Console.WriteLine(PrintArray(ArrayNK_New));
+// int[,] ArrayNK_New = ArrayNK(ArrayMN);
+// Console.WriteLine(PrintArray(ArrayNK_New));
 
 // 51. Задать двумерный массив следующим правилом: Aₘₙ = m+n
 
@@ -104,7 +104,32 @@ Console.WriteLine(PrintArray(ArrayNK_New3));
 
 // 53. В двумерном массиве показать позиции числа, заданного пользователем или указать, что такого элемента нет
 
+int[,] UserArray = NewArray(6, 6, 10, 100);
+Console.WriteLine(PrintArray(UserArray));
 
+string UserNumber(int[,] array)
+{
+    Console.Write("Введите число: ");
+    int usernumber = Convert.ToInt32(Console.ReadLine());
+
+    string result = string.Empty;
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (usernumber == array[i, j])
+            {
+                result = "Число - " + usernumber + " есть в массиве.";
+                break;
+            }
+            else result = "Числа - " + usernumber + " нет в массиве.";
+        }
+    }
+    return result;
+}
+
+Console.WriteLine(UserNumber(UserArray));
 
 // 54. В матрице чисел найти сумму элементов главной диагонали
 
