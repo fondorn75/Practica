@@ -84,13 +84,15 @@ Console.WriteLine(Sinus(45));
 // 6. Выяснить является ли число чётным 
 
 Console.WriteLine("Выяснить является ли число чётным");
-void Chetnoe(int number)
+string Chetnoe(int number)
 {
-    if (number % 2 == 0) Console.WriteLine("Число: " + number + " четное.");
-    else Console.WriteLine("Число: " + number + " нечетное.");
+    string result = string.Empty;
+    if (number % 2 == 0) result = "Число: " + number + " четное.";
+    else result = "Число: " + number + " нечетное.";
+    return result;
 }
 
-Chetnoe(12);
+Console.WriteLine(Chetnoe(12));
 
 // 7. Показать числа от -N до N 
 
@@ -111,46 +113,57 @@ Console.WriteLine(ShowNumbers(5));
 // 8. Показать четные числа от 1 до N 
 
 Console.WriteLine("Показать четные числа от 1 до N");
-void ArrayNumbers(int n)
+string ArrayNumbers(int n)
 {
+    string result = string.Empty;
     for (int i = 1; i < n + 1; i++)
     {
-
-        Console.WriteLine(i);
+        result += i + " ";
     }
-
+    return result;
 }
-Console.WriteLine();
-ArrayNumbers(5);
+
+Console.WriteLine(ArrayNumbers(5));
 
 // 9. Показать последнюю цифру трёхзначного числа
 
 Console.WriteLine("Показать последнюю цифру трёхзначного числа");
-int array = 123;
-string end = Convert.ToString(array);
-Console.WriteLine(end[2]);
+int LastDigit(int number)
+{
+    int temp = number % 10;
+    return temp;
+}
+
+Console.WriteLine(LastDigit(124));
 
 // 10. Показать вторую цифру трёхзначного числа
 
 Console.WriteLine("Показать вторую цифру трёхзначного числа");
-array = 258;
-end = Convert.ToString(array);
-Console.WriteLine(end[1]);
+int SecondDigit(int number)
+{
+    int temp = (number % 100) / 10;
+    return temp;
+}
+
+Console.WriteLine(SecondDigit(458));
 
 // 11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
 
 Console.WriteLine("Показать наибольшую цифру числа");
 
-void RandomNumber()
+string RandomNumber()
 {
+    string result = string.Empty;
     int randomNumber = new Random().Next(10, 99);
     int x1 = randomNumber / 10;
     int x2 = randomNumber % 10;
-    if (x1 > x2) Console.WriteLine(x1);
-    else Console.WriteLine(x2);
+    if (x1 > x2) result = "Задано число: " + randomNumber + " наибольшее: " + x1;
+    else result = "Задано число: " + randomNumber + " наибольшее: " + x2;
+
+    return result;
 }
 
-RandomNumber();
+Console.WriteLine(RandomNumber());
 
 // 12. Удалить вторую цифру трёхзначного числа
 
