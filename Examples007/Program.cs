@@ -107,10 +107,10 @@ Console.WriteLine(PrintArray(ArrayNK_New3));
 int[,] UserArray = NewArray(6, 6, 10, 100);
 Console.WriteLine(PrintArray(UserArray));
 
-string UserNumber(int[,] array)
+string UserNumber(int[,] array, int x)
 {
-    Console.Write("Введите число: ");
-    int usernumber = Convert.ToInt32(Console.ReadLine());
+    // Console.Write("Введите число: ");
+    // int usernumber = Convert.ToInt32(Console.ReadLine());
 
     string result = string.Empty;
 
@@ -118,18 +118,18 @@ string UserNumber(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (usernumber == array[i, j])
+            if (x == array[i, j])
             {
-                result = "Число - " + usernumber + " есть в массиве.";
-                break;
+                result += array[i, j] + " ";
+                //break;
             }
-            else result = "Числа - " + usernumber + " нет в массиве.";
+            //else result = "Числа - " + x + " нет в массиве.";
         }
     }
     return result;
 }
 
-Console.WriteLine(UserNumber(UserArray));
+Console.WriteLine(UserNumber(UserArray, 66));
 
 // 54. В матрице чисел найти сумму элементов главной диагонали
 
