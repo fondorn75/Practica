@@ -1,6 +1,6 @@
 ﻿// 23. Показать таблицу квадратов чисел от 1 до N 
 
-int[] TabKvadrat(int n)
+int[] TableOfSquares(int n)
 {
     int result = 1;
     int[] array = new int[n];
@@ -12,7 +12,7 @@ int[] TabKvadrat(int n)
     return array;
 }
 
-string PrintArr(int[] array)
+string PrintArray(int[] array)
 {
     string res = string.Empty;
     for (int i = 0; i < array.Length; i++)
@@ -22,9 +22,9 @@ string PrintArr(int[] array)
     return res;
 }
 
-int[] NewArray = TabKvadrat(12);
+int[] NewArray = TableOfSquares(12);
 
-Console.WriteLine(PrintArr(NewArray));
+Console.WriteLine(PrintArray(NewArray));
 
 // 24. Найти кубы чисел от 1 до N
 
@@ -43,7 +43,7 @@ int[] TabKub(int n)
 
 int[] NewKub = TabKub(8);
 
-Console.WriteLine(PrintArr(NewKub));
+Console.WriteLine(PrintArray(NewKub));
 
 // 25. Найти сумму чисел от 1 до А
 
@@ -134,5 +134,5 @@ string KubNum(int[] array)
     return result;
 }
 
-int[] KubArray = TabKvadrat(12);
+int[] KubArray = TableOfSquares(12);
 Console.WriteLine(KubNum(KubArray));
