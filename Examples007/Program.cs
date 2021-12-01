@@ -105,31 +105,29 @@ Console.WriteLine(PrintArray(ArrayNK_New3));
 // 53. В двумерном массиве показать позиции числа, заданного пользователем или указать, что такого элемента нет
 
 int[,] UserArray = NewArray(6, 6, 10, 100);
-Console.WriteLine(PrintArray(UserArray));
 
-string UserNumber(int[,] array, int x)
+string UserNumber(int[,] array)
 {
-    // Console.Write("Введите число: ");
-    // int usernumber = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите число: ");
+    int usernumber = Convert.ToInt32(Console.ReadLine());
 
+    int temp = 0;
     string result = string.Empty;
 
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (x == array[i, j])
-            {
-                result += array[i, j] + " ";
-                //break;
-            }
-            //else result = "Числа - " + x + " нет в массиве.";
+            if (usernumber == array[i, j]) temp++;
         }
     }
+    if (temp == 0) result = "Такого числа нет в массиве.";
+    else result = "Число " + usernumber + " встречается в массиве " + temp + " раз.";
+
     return result;
 }
 
-Console.WriteLine(UserNumber(UserArray, 66));
+Console.WriteLine(UserNumber(UserArray));
 
 // 54. В матрице чисел найти сумму элементов главной диагонали
 
