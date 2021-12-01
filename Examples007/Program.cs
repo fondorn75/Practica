@@ -131,6 +131,37 @@ Console.WriteLine(UserNumber(UserArray));
 
 // 54. В матрице чисел найти сумму элементов главной диагонали
 
+int SummaElements(int[,] array)
+{
+    int result = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == j) result += array[i, j];
+        }
+    }
+    return result;
+}
 
+Console.WriteLine(PrintArray(UserArray));
+Console.WriteLine(SummaElements(UserArray));
 
 // 55. Дан целочисленный массив. Найти среднее арифметическое каждого из столбцов.
+
+int Average(int[,] array)
+{
+    int temp = 0;
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            temp += array[i, j];
+        }
+    }
+
+    return temp;
+}
+
+Console.WriteLine(Average(UserArray));
