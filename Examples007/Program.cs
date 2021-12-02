@@ -149,21 +149,25 @@ Console.WriteLine(SummaElements(UserArray));
 
 // 55. Дан целочисленный массив. Найти среднее арифметическое каждого из столбцов.
 
-int[,] newUserArray = NewArray(4, 4, 1, 3);
+int[,] newUserArray = NewArray(4, 4, 1, 4);
 
 string Average(int[,] array)
 {
     int temp = 0;
     string result = string.Empty;
-
+    int column = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (j == 0) temp += array[i, j];
+            if (j == column) temp += array[i, j];
         }
+        column++;
         result += temp + " ";
+        //temp = 0;
     }
+
+
 
     return result;
 }
