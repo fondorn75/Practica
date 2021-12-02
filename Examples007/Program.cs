@@ -158,18 +158,17 @@ string Average(int[,] array)
     int column = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
+        //temp = 0;
+        //column++;
         for (int j = 0; j < array.GetLength(1); j++)
         {
             if (j == column) temp += array[i, j];
         }
-        column++;
-        result += temp + " ";
-        //temp = 0;
+
     }
-
-
-
+    result += temp + " ";
     return result;
 }
+
 Console.WriteLine(PrintArray(newUserArray));
 Console.WriteLine(Average(newUserArray));
