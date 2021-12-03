@@ -151,22 +151,29 @@ Console.WriteLine(SummaElements(UserArray));
 
 int[,] newUserArray = NewArray(4, 4, 1, 4);
 
+int temp = 0;
+string result = string.Empty;
+int column = 0;
+
 string Average(int[,] array)
 {
-    int temp = 0;
-    string result = string.Empty;
-    int column = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        //temp = 0;
-        //column++;
         for (int j = 0; j < array.GetLength(1); j++)
         {
             if (j == column) temp += array[i, j];
         }
 
     }
-    result += temp + " ";
+
+    if (column < array.GetLength(1))
+    {
+        result += temp + " ";
+        temp = 0;
+        column++;
+        Average(newUserArray);
+    }
+
     return result;
 }
 
