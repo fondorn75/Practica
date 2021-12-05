@@ -3,36 +3,61 @@ string result = string.Empty;
 
 string naturalNumber(int n)
 {
+    if (n > 1) naturalNumber(n - 1);
     result += n + " ";
-    if (n == 0)
-    {
-        break;
-    } 
-    naturalNumber(n - 1);
-
     return result;
 }
 
-Console.WriteLine(naturalNumber(5));
+Console.WriteLine(naturalNumber(10));
 
 // 67. Показать натуральные числа от N до 1, N задано
+string result2 = string.Empty;
+string naturalNumber2(int n)
+{
+    result2 += n + " ";
+    if (n > 1) naturalNumber2(n - 1);
+    return result2;
+}
 
-
+Console.WriteLine(naturalNumber2(10));
 
 // 68. Показать натуральные числа от M до N, N и M заданы
 
+string tempString = string.Empty;
 
+string NaturalNumberMN(int m, int n)
+{
+    if (m < n) NaturalNumberMN(m, n - 1);
+    tempString += n + " ";
+
+    return tempString;
+}
+Console.WriteLine(NaturalNumberMN(10, 20));
 
 // 69. Найти сумму элементов от M до N, N и M заданы
+int temp = 0;
 
+int SummaNumber(int m, int n)
+{
+    if (m < n) SummaNumber(m, n - 1);
+    temp += n;
 
+    return temp;
+}
+
+Console.WriteLine(SummaNumber(1, 5));
 
 // 70. Найти сумму цифр числа
 
 
 
 // 71. Написать программу вычисления функции Аккермана
+
+
+
 // 72. Написать программу возведения числа А в целую стень B
+
+
 // 73. Написать программу показывающие первые N чисел, для которых каждое следующее равно сумме двух предыдущих. 
 // Первые два элемента последовательности задаются пользователем
 // 74. В некотором машинном алфавите имеются четыре буквы «а», «и», «с» и «в». 
