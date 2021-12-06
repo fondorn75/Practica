@@ -48,12 +48,13 @@ int SummaNumber(int m, int n)
 Console.WriteLine(SummaNumber(1, 5));
 
 // 70. Найти сумму цифр числа
+
 int tmp = 0;
 
 int SummaDigitNumbers(int number)
 {
-
-    if (number > 0) tmp += SummaDigitNumbers(number % 10);
+    number = number % 10;
+    if (number > 0) tmp += SummaDigitNumbers(number);
     return tmp;
 
 }
@@ -61,6 +62,10 @@ int SummaDigitNumbers(int number)
 Console.WriteLine(SummaDigitNumbers(123));
 
 // 71. Написать программу вычисления функции Аккермана
+// Функция Аккермана определяется рекурсивно для неотрицательных целых чисел m и n следующим образом:
+// A(m, n) = n + 1 если m = 0
+//           A(m-1,1) если m > 0, n = 0
+//           A(m - 1, A(m, n - 1)) если m > 0, n > 0
 
 int FunctionA(int m, int n)
 {
