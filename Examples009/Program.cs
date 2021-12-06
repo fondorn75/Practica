@@ -62,7 +62,14 @@ Console.WriteLine(SummaDigitNumbers(123));
 
 // 71. Написать программу вычисления функции Аккермана
 
+int FunctionA(int m, int n)
+{
+    if (m == 0) return n + 1;
+    else if (m > 0 && n == 0) return FunctionA(m - 1, 1);
+    else return FunctionA(m - 1, FunctionA(m, n - 1));
+}
 
+Console.WriteLine(FunctionA(4, 0));
 
 // 72. Написать программу возведения числа А в целую стень B
 
