@@ -53,8 +53,8 @@ int tmp = 0;
 
 int SummaDigitNumbers(int number)
 {
-    number = number % 10;
-    if (number > 0) tmp += SummaDigitNumbers(number);
+    if (number > 0) number = SummaDigitNumbers(number % 10);
+    tmp += number;
     return tmp;
 
 }
