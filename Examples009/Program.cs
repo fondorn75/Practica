@@ -53,10 +53,8 @@ int tmp = 0;
 
 int SummaDigitNumbers(int number)
 {
-    if (number > 0) number = SummaDigitNumbers(number % 10);
-    tmp += number;
+    if (number > 0) tmp += SummaDigitNumbers(number / 10) % 10;
     return tmp;
-
 }
 
 Console.WriteLine(SummaDigitNumbers(123));
