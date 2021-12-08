@@ -53,8 +53,8 @@ int tmp = 0;
 
 int SummaDigitNumbers(int number)
 {
-    if (number > 0) return SummaDigitNumbers(number) % 10;
-    tmp = number;
+    if (number != 0) return SummaDigitNumbers(number / 10) % 10;
+    tmp += number;
     return tmp;
 }
 
@@ -86,10 +86,30 @@ int SqrtNumber(int a, int b)
     return tempSqrt;
 }
 
-Console.WriteLine(SqrtNumber(2, 4));
+Console.WriteLine(SqrtNumber(2, 10));
 
 
 // 73. Написать программу показывающие первые N чисел, для которых каждое следующее равно сумме двух предыдущих. 
 //     Первые два элемента последовательности задаются пользователем
+
+string res = string.Empty;
+int tmp2 = 0;
+
+string FirstNumbers(int a, int b, int n)
+{
+    tmp2 = a + b;
+    a = b;
+    b = tmp2;
+    if (n > 1)
+    {
+        FirstNumbers(a, b, n - 1);
+        res += tmp2 + " ";
+    }
+
+    return res;
+}
+
+Console.WriteLine(FirstNumbers(2, 3, 5));
+
 // 74. В некотором машинном алфавите имеются четыре буквы «а», «и», «с» и «в». 
 //     Покажите все слова, состоящие из n букв, которые можно построить из букв этого алфавита
