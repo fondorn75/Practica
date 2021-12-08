@@ -97,7 +97,6 @@ int tmp2 = 0;
 
 string FirstNumbers(int a, int b, int n)
 {
-    res = a + " " + b;
     tmp2 = a + b;
     a = b;
     b = tmp2;
