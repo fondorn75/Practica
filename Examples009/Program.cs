@@ -53,8 +53,8 @@ int tmp = 0;
 
 int SummaDigitNumbers(int number)
 {
-    if (number > 0) SummaDigitNumbers(number % 10);
-    tmp += number;
+    if (number > 0) return SummaDigitNumbers(number) % 10;
+    tmp = number;
     return tmp;
 }
 
@@ -77,8 +77,19 @@ Console.WriteLine(FunctionA(4, 0));
 
 // 72. Написать программу возведения числа А в целую стень B
 
+int tempSqrt = 0;
+
+int SqrtNumber(int a, int b)
+{
+    if (b > 0) return SqrtNumber(a, b - 1) * a;
+    tempSqrt = a;
+    return tempSqrt;
+}
+
+Console.WriteLine(SqrtNumber(2, 4));
+
 
 // 73. Написать программу показывающие первые N чисел, для которых каждое следующее равно сумме двух предыдущих. 
-// Первые два элемента последовательности задаются пользователем
+//     Первые два элемента последовательности задаются пользователем
 // 74. В некотором машинном алфавите имеются четыре буквы «а», «и», «с» и «в». 
-// Покажите все слова, состоящие из n букв, которые можно построить из букв этого алфавита
+//     Покажите все слова, состоящие из n букв, которые можно построить из букв этого алфавита
