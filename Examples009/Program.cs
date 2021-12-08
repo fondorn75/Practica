@@ -97,14 +97,12 @@ int tmp2 = 0;
 
 string FirstNumbers(int a, int b, int n)
 {
+    res = a + " " + b;
     tmp2 = a + b;
     a = b;
     b = tmp2;
-    if (n > 1)
-    {
-        FirstNumbers(a, b, n - 1);
-        res += tmp2 + " ";
-    }
+    res += tmp2 + " ";
+    if (n > 1) FirstNumbers(a, b, n - 1);
 
     return res;
 }
