@@ -49,17 +49,11 @@ Console.WriteLine(SummaNumber(1, 5));
 
 // 70. Найти сумму цифр числа
 
-int tmp = 0;
-
 int SummaDigitNumbers(int number)
 {
-    tmp = number % 10;
-    if (number > 0)
-    {
-        SummaDigitNumbers(number / 10);
-        tmp += tmp;
-    }
-    return tmp;
+    temp = number % 10;
+    if (number > 1) return SummaDigitNumbers(number / 10);
+    return temp += temp;
 }
 
 Console.WriteLine(SummaDigitNumbers(1234));
