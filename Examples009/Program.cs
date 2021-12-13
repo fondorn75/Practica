@@ -53,12 +53,16 @@ int tmp = 0;
 
 int SummaDigitNumbers(int number)
 {
-    if (number != 0) return SummaDigitNumbers(number / 10) % 10;
-    tmp += number;
+    tmp = number % 10;
+    if (number > 0)
+    {
+        SummaDigitNumbers(number / 10);
+        tmp += tmp;
+    }
     return tmp;
 }
 
-Console.WriteLine(SummaDigitNumbers(123));
+Console.WriteLine(SummaDigitNumbers(1234));
 
 // 71. Написать программу вычисления функции Аккермана
 // Функция Аккермана определяется рекурсивно для неотрицательных целых чисел m и n следующим образом:
